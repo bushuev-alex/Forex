@@ -45,4 +45,3 @@ def get_stochastic(df: pd.DataFrame, k_per: int, d_per: int) -> pd.Series:
     sma_lower = (max_high - min_low).rolling(d_per, min_periods=0).sum()
     stochastic = (sma_upper / sma_lower)*100
     return stochastic.map(lambda x: round(x, 2))
-
